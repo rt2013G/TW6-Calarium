@@ -1,0 +1,25 @@
+{
+  "name": "tw6-calarium",
+  "version": "1.0.0",
+  "description": "This is a project created for my university course of _Web Tecnologies_, with the purpose of designing and building\r a web application in its entirety, including both the front end and the back end, with tools of our choice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-cli": "^2.3.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0"
+  },
+  "overrides": {
+    "glob-parent": "^6.0.2",
+    "localtunnel": "^2.0.1"
+  }
+}

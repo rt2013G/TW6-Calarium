@@ -1,3 +1,7 @@
+body {
+  font-family: var(--main-font);
+}
+
 :root {
   --background: #0e1012;
   --background2: #1a1c20;
@@ -8,4 +12,8 @@
   --text2: #8e858f;
   --hover: #c1b2bc;
   --text-white: #FFFFFF;
+}
+
+:root {
+  --main-font: "Inter", Arial;
 }
