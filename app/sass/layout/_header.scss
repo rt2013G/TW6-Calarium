@@ -1,0 +1,100 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.header {
+  background-color: var(--background-nav);
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: rem(60);
+  max-height: rem(60);
+  border-bottom: solid var(--component-yellow) 3px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: rem(10);
+
+  &__left {
+    display: flex;
+  }
+
+  &__menu {
+    background-color: transparent;
+    border: none;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+
+    &__icon {
+      width: rem(40);
+      height: rem(50);
+    }
+  }
+
+  &__menu:hover {
+    cursor: pointer;
+  }
+
+  &__title {
+    color: var(--component-white);
+    font-size: rem(28);
+    font-weight: 800;
+    align-self: center;
+  }
+
+  &__planet {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 5px;
+    margin-right: 5vw;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+    display: none;
+    @include __mix.breakpoint(desktop) {
+      display: block;
+    }
+
+    &__icon {
+      width: rem(40);
+      height: rem(40);
+      margin-bottom: -5px;
+    }
+
+    &__text {
+      font-size: rem(12);
+      font-weight: 800;
+    }
+  }
+
+  &__planet:hover {
+    cursor: pointer;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__sound {
+    &__icon {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+      width: rem(60);
+      height: rem(40);
+    }
+
+  }
+
+
+  &__user {
+    background-color: transparent;
+    border: none;
+
+    &__icon {
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+
+  &__user:hover {
+    cursor: pointer;
+  }
+}

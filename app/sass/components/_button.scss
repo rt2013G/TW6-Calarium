@@ -1,0 +1,27 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.button {
+  font-weight: 700;
+  font-size: rem(22);
+  text-transform: uppercase;
+  background-color: var(--component-yellow);
+  color: var(--text-dark);
+  width: rem(229);
+  height: rem(40);
+  border-radius: 90px;
+  border: solid var(--component-yellow) 1px;
+  transition: background-color 200ms;
+
+  &__mobile {
+    @include __mix.breakpoint(desktop) {
+      display: none;
+    }
+  }
+}
+
+.button:hover {
+  background-color: var(--background-page);
+  color: var(--component-yellow);
+  cursor: pointer;
+}

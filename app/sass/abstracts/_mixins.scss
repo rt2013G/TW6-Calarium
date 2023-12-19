@@ -1,0 +1,12 @@
+// 883px+ for desktop, 1643+ for high res
+$breakpoints-max: (
+  'desktop': '55.1875em',
+  'highres': '102.6875em'
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-max, $size)) {
+    @content;
+  }
+}
+

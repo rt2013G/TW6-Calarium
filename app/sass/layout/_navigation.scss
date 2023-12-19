@@ -1,0 +1,101 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.navigator {
+  background-color: var(--background-nav);
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  max-height: rem(80);
+
+  @include __mix.breakpoint(desktop) {
+    top: 0;
+    width: rem(80);
+    height: 100vh;
+    min-height: 550px;
+    padding-top: rem(60);
+    padding-bottom: 0;
+    flex-direction: column;
+    max-height: none;
+  }
+
+  &__circle {
+    background-color: var(--component-yellow);
+    height: rem(60);
+    width: rem(60);
+    border-radius: 64px;
+    border: none;
+    transition: background-color 200ms;
+
+    &__icon {
+      width: rem(30);
+      height: rem(30);
+      margin-top: 4px;
+    }
+  }
+
+  &__circle:hover {
+    background-color: var(--background-page);
+    cursor: pointer;
+  }
+
+  &__circle:hover img {
+    fill: red;
+    filter: invert(80%) sepia(78%) saturate(1581%) hue-rotate(3deg) brightness(107%) contrast(105%);
+  }
+
+  .separator {
+    width: 100%;
+    height: 4px;
+    background-color: var(--component-yellow);
+    display: none;
+    @include __mix.breakpoint(desktop) {
+      display: block;
+    }
+  }
+
+  &__options {
+    background-color: transparent;
+    border: none;
+    display: none;
+    @include __mix.breakpoint(desktop) {
+      display: block;
+    }
+
+    &__text {
+      font-size: rem(10);
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--component-white);
+      top: 0;
+      left: 0;
+      transition: color 200ms;
+    }
+
+    &__icon {
+      width: rem(40);
+      height: rem(40);
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+    }
+
+    &__logout {
+      margin-top: 5px;
+    }
+  }
+
+  &__options:hover {
+    cursor: pointer;
+  }
+
+  &__options:hover span {
+    color: var(--background-nav);
+  }
+}

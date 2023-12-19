@@ -64,7 +64,7 @@ and run ```npm upate```\
 Now I can set up a Gulp workflow by creating a _gulpfile.js_ file, then simply run ```gulp watch``` in the command line.
 
 ### HTML
-I then created the index.html file and import the font [_Inter_](https://fonts.google.com/specimen/Inter).
+I then created the index.html file imported the font [_Inter_](https://fonts.google.com/specimen/Inter) and styled the page using only SCSS.
 
 
 ## Author
@@ -77,3 +77,4 @@ Raffaele Talente, student enrolled at University of Naples "Parthenope"
 - [Sass website](https://sass-lang.com/guide/) and [Sass guidelines](https://sass-guidelin.es/) - For everything related to Sass
 - [SVG Repo](https://www.svgrepo.com/) - For the icons used
 - [ArctSound](https://pixabay.com/music/main-title-sci-fi-cyberpunk-trailer-110587/) - For the music theme
+- [This codepen](https://codepen.io/sosuke/pen/Pjoqqp) - For changing color of SVG icons

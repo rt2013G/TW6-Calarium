@@ -14,14 +14,76 @@
 <body>
 
 <main>
-  hello index.html
+  <div class="page-content">
+    <div class="game"></div>
+    <div class="button-container">
+      <button class="button">
+        download
+      </button>
+      <button class="button button__mobile">
+        new chat
+      </button>
+    </div>
+  </div>
 </main>
 
-<nav>
+<nav class="navigator">
+  <button class="navigator__circle">
+    <img class="navigator__circle__icon" src="res/icons/rocket.svg">
+  </button>
+
+  <button class="navigator__circle">
+    <img class="navigator__circle__icon" src="res/icons/crew.svg">
+  </button>
+
+  <button class="navigator__circle">
+    <img class="navigator__circle__icon" src="res/icons/chat.svg">
+  </button>
+
+  <button class="navigator__circle">
+    <img class="navigator__circle__icon" src="res/icons/leaderboard.svg">
+  </button>
+
+  <div class="separator"></div>
+
+  <button class="navigator__options">
+    <img class="navigator__options__icon" src="res/icons/settings.svg">
+    <span class="navigator__options__text">settings</span>
+  </button>
+
+  <button class="navigator__options navigator__options__logout">
+    <img class="navigator__options__icon" src="res/icons/logout.svg">
+    <span class="navigator__options__text">logout</span>
+  </button>
 
 </nav>
 
-<header>
+<header class="header">
+
+  <div class="header__left">
+    <button class="header__menu">
+      <img class="header__menu__icon" src="res/icons/burger-menu-left.svg">
+    </button>
+
+    <div class="header__title">Calarium</div>
+  </div>
+
+  <button class="header__planet">
+    <img class="header__planet__icon" src="res/icons/saturn.svg">
+    <span class="header__planet__text">explore.</span>
+  </button>
+
+  <div class="header__right">
+
+    <input type="checkbox" id="header__sound">
+    <label for="header__sound">
+      <img class="header__sound__icon" src="res/icons/sound.svg">
+    </label>
+
+    <button class="header__user">
+      <img class="header__user__icon" src="res/icons/user.svg">
+    </button>
+  </div>
 
 </header>
 
