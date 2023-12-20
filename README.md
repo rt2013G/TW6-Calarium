@@ -13,7 +13,7 @@ a web application in its entirety, including both the front end and the back end
       - [HTML](#html)
       - [Javascript](#javascript)
       - Three.js
-      - Flask
+      - [Flask](#flask)
   - [Workflow](#workflow)
 - [Author](#author)
 - [Additional resources and acknowledgements](#additional-resources-and-acknowledgements)
@@ -74,6 +74,11 @@ I imported them as HTML script tags, but they can also be installed with npm as 
 ```npm install jquery```\
 ```npm install --save three```
 
+### Flask
+The backend of the web application uses Python with the microframework _Flask_.\
+I first created a _virtual environment_, then installed flask with\
+```pip install flask```
+
 
 ## Author
 Raffaele Talente, student enrolled at University of Naples "Parthenope"
@@ -88,3 +93,4 @@ Raffaele Talente, student enrolled at University of Naples "Parthenope"
 - [This codepen](https://codepen.io/sosuke/pen/Pjoqqp) - For changing color of SVG icons
 - [Three.js docs](https://threejs.org/docs/)
 - [This video](https://www.youtube.com/watch?v=Q7AOvWpIVHU) - For the image assets
+- [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)

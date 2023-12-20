@@ -75,8 +75,8 @@ const movingStarsMesh =  new THREE.Points(movingStarGeometry, movingStarMaterial
 scene.add(movingStarsMesh);
 
 
-const moonTexture = new THREE.TextureLoader().load('../../res/static/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('../../res/static/normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('../../static/texture/moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('../../static/texture//normal.jpg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(10, 32, 32),

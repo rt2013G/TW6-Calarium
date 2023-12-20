@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="../../out/style.css">
   <audio controls id="audio_track" loop>
-    <source src="../../../res/sound/main-theme.mp3" type="audio/mpeg">
+    <source src="../../static/sound/main-theme.mp3" type="audio/mpeg">
   </audio>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="importmap">
@@ -22,8 +22,8 @@
       }
     }
   </script>
-  <script type="module" defer src="../../js/main.js"></script>
-  <script type="module" defer src="../../js/background.js"></script>
+  <script type="module" defer src="../../frontend/js/main.js"></script>
+  <script type="module" defer src="../../frontend/js/background.js"></script>
 </head>
 <body>
 
@@ -47,7 +47,7 @@
 
 <nav class="navigator hide-on-desktop">
   <button class="planet hide-on-desktop">
-    <img class="planet__icon hide-on-desktop" src="../../../res/icons/saturn.svg">
+    <img class="planet__icon hide-on-desktop" src="../../static/icons/saturn.svg">
     <span class="planet__text hide-on-desktop">explore.</span>
   </button>
 </nav>
@@ -56,7 +56,7 @@
 
   <div class="header__left">
     <button class="header__menu">
-      <img class="header__menu__icon" src="../../../res/icons/burger-menu-left.svg">
+      <img class="header__menu__icon" src="../../static/icons/burger-menu-left.svg">
     </button>
 
     <div class="header__title">Calarium</div>
@@ -66,7 +66,7 @@
 
     <input type="checkbox" id="header__sound" checked>
     <label for="header__sound">
-      <img class="header__sound__icon" src="../../../res/icons/sound.svg">
+      <img class="header__sound__icon" src="../../static/icons/sound.svg">
     </label>
 
     <div class="rect-button-container js-login-button">
@@ -75,7 +75,7 @@
     </div>
 
     <button class="header__user js-user-icon">
-      <img class="header__user__icon" src="../../../res/icons/user.svg">
+      <img class="header__user__icon" src="../../static/icons/user.svg">
     </button>
 
   </div>

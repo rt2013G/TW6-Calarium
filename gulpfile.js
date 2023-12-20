@@ -3,9 +3,9 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
 function css() {
-    return gulp.src('app/sass/style.scss')
+    return gulp.src('frontend/sass/style.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('app/out'))
+        .pipe(gulp.dest('out'))
         .pipe(browserSync.stream())
 }
 
@@ -15,10 +15,10 @@ function watch() {
             baseDir: './'
         }
     });
-    gulp.watch('app/sass', css);
+    gulp.watch('frontend/sass', css);
     gulp.watch('index.html').on('change', browserSync.reload);
-    gulp.watch('app/flask/templates').on('change', browserSync.reload);
-    gulp.watch('app/js').on('change', browserSync.reload);
+    gulp.watch('app/flask_app/templates').on('change', browserSync.reload);
+    gulp.watch('frontend/js').on('change', browserSync.reload);
 }
 
 function defaultTask(cb) {
