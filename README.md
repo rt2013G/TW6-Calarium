@@ -11,7 +11,8 @@ a web application in its entirety, including both the front end and the back end
       - [Sass](#sass)
       - [Gulp](#gulp)
       - [HTML](#html)
-      - Javascript
+      - [Javascript](#javascript)
+      - Three.js
       - Flask
   - [Workflow](#workflow)
 - [Author](#author)
@@ -64,7 +65,14 @@ and run ```npm upate```\
 Now I can set up a Gulp workflow by creating a _gulpfile.js_ file, then simply run ```gulp watch``` in the command line.
 
 ### HTML
-I then created the index.html file imported the font [_Inter_](https://fonts.google.com/specimen/Inter) and styled the page using only SCSS.
+I then created the index.html file, imported the font [_Inter_](https://fonts.google.com/specimen/Inter) and styled the page using only SCSS.
+
+### Javascript
+After styling only the home page, I decided to add the first bits of Javascript to include the sound toggle button.\
+To help making the website interactive, I installed _JQuery_, and then _Three.js_ to add 3D animations.
+I imported them as HTML script tags, but they can also be installed with npm as follows:\
+```npm install jquery```\
+```npm install --save three```
 
 
 ## Author
@@ -78,3 +86,5 @@ Raffaele Talente, student enrolled at University of Naples "Parthenope"
 - [SVG Repo](https://www.svgrepo.com/) - For the icons used
 - [ArctSound](https://pixabay.com/music/main-title-sci-fi-cyberpunk-trailer-110587/) - For the music theme
 - [This codepen](https://codepen.io/sosuke/pen/Pjoqqp) - For changing color of SVG icons
+- [Three.js docs](https://threejs.org/docs/)
+- [This video](https://www.youtube.com/watch?v=Q7AOvWpIVHU) - For the image assets

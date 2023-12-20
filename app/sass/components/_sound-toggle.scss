@@ -1,0 +1,16 @@
+input[type='checkbox'][id='header__sound'] {
+  display: none;
+}
+
+label[for='header__sound'] {
+  position: relative;
+  cursor: pointer;
+}
+
+label[for='header__sound']:hover img {
+  filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+}
+
+:checked + label img {
+  filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+}
