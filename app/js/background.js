@@ -88,7 +88,6 @@ const moon = new THREE.Mesh(
 moon.position.z = -20;
 moon.position.x = 50;
 moon.position.y = 15;
-
 scene.add(moon);
 
 /*
@@ -122,11 +121,11 @@ function animate() {
     movingStarsMesh.rotation.x = -0.04 * deltaTime;
     movingStarsMesh.rotation.y = 0.05 * deltaTime;
     if(mouseX > 0) {
-        movingStarsMesh.rotation.x = -mouseY * (deltaTime * 0.0001);
-        movingStarsMesh.rotation.y = mouseX * (deltaTime * 0.0002);
+        movingStarsMesh.rotation.x = -mouseY * deltaTime * 0.00005;
+        movingStarsMesh.rotation.y = mouseX * deltaTime * 0.0001;
     }
-    moon.rotation.x -= 0.0004;
-    moon.rotation.y += 0.0004;
+    moon.rotation.x -= 0.0008;
+    moon.rotation.y += 0.0008;
 
     renderer.render( scene, camera );
     requestAnimationFrame( animate );

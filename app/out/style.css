@@ -7,11 +7,14 @@ html {
   box-sizing: inherit;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--main-font);
   background: var(--background-page);
-  margin: 0;
-  padding: 0;
   height: 100vh;
 }
 
@@ -53,11 +56,6 @@ body {
   background-color: var(--background-page);
   color: var(--component-yellow);
   cursor: pointer;
-}
-
-main {
-  margin: 0;
-  padding: 0;
 }
 
 .three-background {
@@ -157,11 +155,23 @@ label[for=header__sound]:hover img {
 }
 .header__left {
   display: flex;
+  gap: 0.3125rem;
+}
+@media (min-width: 55.1875em) {
+  .header__left {
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 102.6875em) {
+  .header__left {
+    gap: 2.5rem;
+  }
 }
 .header__menu {
   background-color: transparent;
   border: none;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+  margin-left: 0.625rem;
 }
 .header__menu__icon {
   width: 2.5rem;
@@ -180,7 +190,7 @@ label[for=header__sound]:hover img {
   background-color: transparent;
   border: none;
   margin-bottom: 5px;
-  margin-right: 5vw;
+  margin-right: 4vw;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
   display: none;
 }
@@ -205,6 +215,17 @@ label[for=header__sound]:hover img {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 0.625rem;
+}
+@media (min-width: 55.1875em) {
+  .header__right {
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 102.6875em) {
+  .header__right {
+    margin-right: 1.875rem;
+  }
 }
 .header__sound__icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);

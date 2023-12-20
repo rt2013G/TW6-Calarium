@@ -1,11 +1,6 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as __mix;
 
-main {
-  margin: 0;
-  padding: 0;
-}
-
 .three-background {
   position: fixed;
   top: 0;

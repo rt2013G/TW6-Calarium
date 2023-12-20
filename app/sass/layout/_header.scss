@@ -17,12 +17,20 @@
 
   &__left {
     display: flex;
+    gap: rem(5);
+    @include __mix.breakpoint(desktop) {
+      gap: rem(20);
+    }
+    @include __mix.breakpoint(highres) {
+      gap: rem(40);
+    }
   }
 
   &__menu {
     background-color: transparent;
     border: none;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+    margin-left: rem(10);
 
     &__icon {
       width: rem(40);
@@ -45,7 +53,7 @@
     background-color: transparent;
     border: none;
     margin-bottom: 5px;
-    margin-right: 5vw;
+    margin-right: 4vw;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
     display: none;
     @include __mix.breakpoint(desktop) {
@@ -72,6 +80,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: rem(10);
+    @include __mix.breakpoint(desktop) {
+      gap: rem(20);
+    }
+    @include __mix.breakpoint(highres) {
+      margin-right: rem(30);
+    }
   }
 
   &__sound {
@@ -80,9 +95,7 @@
       width: rem(60);
       height: rem(40);
     }
-
   }
-
 
   &__user {
     background-color: transparent;
