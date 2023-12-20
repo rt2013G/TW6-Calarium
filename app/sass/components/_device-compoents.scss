@@ -1,0 +1,20 @@
+@use '../abstracts/mixins' as __mix;
+
+.hide-on-mobile {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  @include __mix.breakpoint(desktop) {
+    visibility: visible;
+    width: revert;
+    height: revert;
+  }
+}
+
+.hide-on-desktop {
+  @include __mix.breakpoint(desktop) {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

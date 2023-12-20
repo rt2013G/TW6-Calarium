@@ -12,6 +12,10 @@ html {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: var(--main-font);
   background: var(--background-page);
@@ -118,8 +122,84 @@ body {
   gap: 1.25rem;
 }
 
+.hide-on-mobile {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+@media (min-width: 55.1875em) {
+  .hide-on-mobile {
+    visibility: visible;
+    width: revert;
+    height: revert;
+  }
+}
+
+@media (min-width: 55.1875em) {
+  .hide-on-desktop {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
 .main {
   align-items: center;
+}
+
+.planet {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 5px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+}
+.planet__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: -5px;
+}
+.planet__text {
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.rect-button-container {
+  position: relative;
+  max-height: 4.5625rem;
+  margin-top: -0.75rem;
+}
+
+.rect-button-container span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.625rem;
+  font-weight: 700;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.rect-button-container span:hover {
+  cursor: pointer;
+  color: var(--component-yellow);
+}
+
+.rect-button-container:hover button {
+  background-color: var(--background-page);
+  cursor: pointer;
+}
+
+.rectangle-button {
+  border-radius: 0;
+  width: 17.3125rem;
+  height: 5.25rem;
+  transform: skewX(-45deg) scaleY(0.7071067812);
 }
 
 input[type=checkbox][id=header__sound] {
@@ -152,6 +232,28 @@ label[for=header__sound]:hover img {
   display: flex;
   justify-content: space-between;
   padding-left: 0.625rem;
+  /*&__planet {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 5px;
+    margin-right: 4vw;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+    display: none;
+    @include __mix.breakpoint(desktop) {
+      display: block;
+    }
+
+    &__icon {
+      width: rem(40);
+      height: rem(40);
+      margin-bottom: -5px;
+    }
+
+    &__text {
+      font-size: rem(12);
+      font-weight: 800;
+    }
+  }*/
 }
 .header__left {
   display: flex;
@@ -185,28 +287,6 @@ label[for=header__sound]:hover img {
   font-size: 1.75rem;
   font-weight: 800;
   align-self: center;
-}
-.header__planet {
-  background-color: transparent;
-  border: none;
-  margin-bottom: 5px;
-  margin-right: 4vw;
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
-  display: none;
-}
-@media (min-width: 55.1875em) {
-  .header__planet {
-    display: block;
-  }
-}
-.header__planet__icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: -5px;
-}
-.header__planet__text {
-  font-size: 0.75rem;
-  font-weight: 800;
 }
 .header__planet:hover {
   cursor: pointer;
@@ -293,25 +373,18 @@ label[for=header__sound]:hover img {
   filter: invert(80%) sepia(78%) saturate(1581%) hue-rotate(3deg) brightness(107%) contrast(105%);
 }
 .navigator .separator {
-  width: 100%;
+  width: 0;
   height: 4px;
   background-color: var(--component-yellow);
-  display: none;
 }
 @media (min-width: 55.1875em) {
   .navigator .separator {
-    display: block;
+    width: 100%;
   }
 }
 .navigator__options {
   background-color: transparent;
   border: none;
-  display: none;
-}
-@media (min-width: 55.1875em) {
-  .navigator__options {
-    display: block;
-  }
 }
 .navigator__options__text {
   font-size: 0.625rem;
@@ -335,4 +408,13 @@ label[for=header__sound]:hover img {
 }
 .navigator__options:hover span {
   color: var(--background-nav);
+}
+
+.mobile-fix {
+  margin-right: -32vw;
+}
+@media (min-width: 55.1875em) {
+  .mobile-fix {
+    margin-right: revert;
+  }
 }

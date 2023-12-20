@@ -1,0 +1,41 @@
+@use '../abstracts/functions' as *;
+
+.rect-button-container {
+  position: relative;
+  max-height: rem(73);
+  margin-top: rem(-12);
+
+}
+
+.rect-button-container span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: rem(10);
+  font-weight: 700;
+  font-size: rem(22);
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.rect-button-container span:hover {
+  cursor: pointer;
+  color: var(--component-yellow);
+}
+
+.rect-button-container:hover button {
+  background-color: var(--background-page);
+  cursor: pointer;
+}
+
+.rectangle-button {
+  border-radius: 0;
+  width: rem(277);
+  height: rem(84);
+  transform: skewX(-45deg) scaleY(cos(-45deg));
+}

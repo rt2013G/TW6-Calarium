@@ -1,5 +1,3 @@
-@use '../abstracts/mixins' as __mix;
-
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -12,6 +10,10 @@ html {
 * {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {

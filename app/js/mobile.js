@@ -9,7 +9,9 @@ export function mobileRender() {
 
     if(isMobile) {
         document.querySelector('.js-download').innerHTML = 'play';
+        $('.js-login-button').hide();
     } else {
         $('.js-new-chat').hide();
+        $('.js-user-icon').hide();
     }
 }

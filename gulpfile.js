@@ -17,6 +17,7 @@ function watch() {
     });
     gulp.watch('app/sass', css);
     gulp.watch('index.html').on('change', browserSync.reload);
+    gulp.watch('app/flask/templates').on('change', browserSync.reload);
     gulp.watch('app/js').on('change', browserSync.reload);
 }
 

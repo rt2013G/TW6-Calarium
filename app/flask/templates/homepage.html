@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calarium</title>
+
+  <!-- FONTS: Inter regular, bold, extra bold -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../out/style.css">
+  <audio controls id="audio_track" loop>
+    <source src="../../../res/sound/main-theme.mp3" type="audio/mpeg">
+  </audio>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" defer src="../../js/main.js"></script>
+  <script type="module" defer src="../../js/background.js"></script>
+</head>
+<body>
+
+<main>
+  <canvas class="three-background">
+
+  </canvas>
+
+  <div class="page-content">
+    <div class="game"></div>
+    <div class="button-container">
+      <button class="button button__mobile js-new-chat">
+        login
+      </button>
+      <button class="button js-download">
+        sign-up
+      </button>
+    </div>
+  </div>
+</main>
+
+<nav class="navigator hide-on-desktop">
+  <button class="planet hide-on-desktop">
+    <img class="planet__icon hide-on-desktop" src="../../../res/icons/saturn.svg">
+    <span class="planet__text hide-on-desktop">explore.</span>
+  </button>
+</nav>
+
+<header class="header">
+
+  <div class="header__left">
+    <button class="header__menu">
+      <img class="header__menu__icon" src="../../../res/icons/burger-menu-left.svg">
+    </button>
+
+    <div class="header__title">Calarium</div>
+  </div>
+
+  <div class="header__right">
+
+    <input type="checkbox" id="header__sound" checked>
+    <label for="header__sound">
+      <img class="header__sound__icon" src="../../../res/icons/sound.svg">
+    </label>
+
+    <div class="rect-button-container js-login-button">
+      <button class="button rectangle-button"></button>
+      <span class="login">login</span>
+    </div>
+
+    <button class="header__user js-user-icon">
+      <img class="header__user__icon" src="../../../res/icons/user.svg">
+    </button>
+
+  </div>
+
+</header>
+
+</body>
+</html>
