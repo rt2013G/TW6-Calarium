@@ -1,3 +1,13 @@
+window.onload = () => {
+    'use strict';
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../static/pwa/sw.js').then(function (registration) {
+    }, function (err) {
+            console.log('service worker registration failed', err);
+        });
+    }
+}
+
 import { mobileRender } from "./mobile.js";
 
 let playSound = false;
@@ -8,9 +18,11 @@ document.body.addEventListener('click', () => {
     audio.play();
 })
 
-document.getElementById('header__sound').addEventListener('click', () => {
+const soundToggle = document.getElementById('header__sound');
+if(soundToggle) {
+    soundToggle.addEventListener('click', () => {
     playSound = document.getElementById('header__sound').checked;
     audio.volume = playSound ? 0.2 : 0;
-})
+})}
 
 mobileRender();

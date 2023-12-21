@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block background %}
+{% include '_three.html' %}
+{% endblock %}
+
 {% block main_content %}
 <div class="page-content">
     <div class="login-title">Calarium</div>
@@ -12,7 +16,9 @@
         <span>remember me.</span>
       </div>
         {{ form.submit(class_="button") }}
-      <button class="button" type="button">sign-up</button>
+        <a href="{{ url_for('auth.register') }}">
+        <button class="button" type="button">sign-up</button>
+        </a>
     </form>
 </div>
 {% endblock %}

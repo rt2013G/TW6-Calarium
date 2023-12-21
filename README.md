@@ -12,9 +12,10 @@ a web application in its entirety, including both the front end and the back end
       - [Gulp](#gulp)
       - [HTML](#html)
       - [Javascript](#javascript)
-      - Three.js
+      - [Three.js](#three.js)
       - [Flask](#flask)
   - [Workflow](#workflow)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 - [Additional resources and acknowledgements](#additional-resources-and-acknowledgements)
 
@@ -74,6 +75,17 @@ I imported them as HTML script tags, but they can also be installed with npm as 
 ```npm install jquery```\
 ```npm install --save three```
 
+### Three.js
+I used Three.js to add a three-dimensional background. I added a simple moon and some stars, some of which
+move when moving the mouse on the page. I didn't tinker with Three.js enough to uncover its full potential but
+overall I think it looks nice enough.
+
+### PWA
+A Progressive Web App is a web application that can be installed on mobile like a native application.
+In order to achieve this, I have to add a _manifest.json_ file and a _sw.js_ file in my project.
+The _sw_ or _service worker_ is a thread that runs in the background and caches content, so that the app is able
+to work even without a connection.
+
 ### Flask
 The backend of the web application uses Python with the microframework _Flask_.\
 I first created a _virtual environment_, then installed flask with ```pip install flask```
@@ -85,6 +97,17 @@ DBMS when the application is closer to being completed.\
 To initialize a database with flask migrate, I used the flask sub-command ```flask db init```. 
 ```flask db migrate``` provides us with the migration script, then ```flask db upgrade``` applies the changes to 
 the database. Meanwhile, to implement the login/logout/user functionalities I also added ```pip install flask-login```.
+
+
+## What I learned
+- Working on this project alone was a massive undertaking, it made me truly understand the phrase
+"two is megl che one", although for a real-world application two might not be enough anyway.
+- I'm not quite sure yet, but working on the presentation (figma, scss, etc...) before the logic (flask, the database)
+might have been a mistake, at least that's how I felt when I started building the flask application.
+- I spent more time researching and setting up the project than actually working on it, but that's probably fair because
+this was the first time I ever worked on a complete web application or a more-than-a-few-files project. 
+Now that I have a basic grasp of the technologies needed, time requirements, folder structure and what the setup 
+looks like, getting started on another project will definitely be much easier.
 
 
 ## Author

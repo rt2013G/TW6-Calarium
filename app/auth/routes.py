@@ -28,7 +28,7 @@ def login():
         if not next_page or urlsplit(next_page).netloc != '':
             next_page = url_for('main.home')
         return redirect(next_page)
-    return render_template('auth/login.html', form=login_form)
+    return render_template('login.html', form=login_form)
 
 
 @bp.route('/logout')
@@ -50,4 +50,4 @@ def register():
         db.session.commit()
         login_user(user)
         return redirect(url_for('main.home'))
-    return render_template('auth/register.html', form=registration_form)
+    return render_template('register.html', form=registration_form)
