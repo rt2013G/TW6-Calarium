@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="login-title">Calarium</div>
+    <form class="form" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+            {{ form.username(size=32, class_="input-field", placeholder_="username") }}
+            {{ form.password(size=32, class_="input-field", placeholder_="password") }}
+      <div class="remember-me">
+        {{ form.remember_me(class_="button-checkbox") }}
+        <span>remember me.</span>
+      </div>
+        {{ form.submit(class_="button") }}
+      <button class="button" type="button">sign-up</button>
+    </form>
+</div>
+{% endblock %}
+
+{% include '_music.html' %}

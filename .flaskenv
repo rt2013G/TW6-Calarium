@@ -1,0 +1,2 @@
+FLASK_APP=calarium.py
+FLASK_DEBUG=1

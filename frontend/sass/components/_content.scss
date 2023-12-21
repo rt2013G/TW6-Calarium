@@ -56,3 +56,18 @@
   flex-direction: column;
   gap: rem(20);
 }
+
+.page-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(60);
+  color: var(--component-white);
+  font-weight: 800;
+  @include __mix.breakpoint(desktop) {
+    font-size: rem(100);
+  }
+  @include __mix.breakpoint(highres) {
+    font-size: rem(140);
+  }
+}

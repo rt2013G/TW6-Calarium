@@ -76,8 +76,15 @@ I imported them as HTML script tags, but they can also be installed with npm as 
 
 ### Flask
 The backend of the web application uses Python with the microframework _Flask_.\
-I first created a _virtual environment_, then installed flask with\
-```pip install flask```
+I first created a _virtual environment_, then installed flask with ```pip install flask```
+and added the files _.flaskenv_, _.env_ and _config.py_ to store configuration and environment variables.
+I also installed the extension ```pip install flask_wtf``` to handle forms.
+To manage databases easily, I'm also using ```pip install flask-sqlalchemy``` and ```pip install flask-migrate```.
+During development, I'm working with a SQLite database as it easier to manage, but I'll be migrating to another
+DBMS when the application is closer to being completed.\
+To initialize a database with flask migrate, I used the flask sub-command ```flask db init```. 
+```flask db migrate``` provides us with the migration script, then ```flask db upgrade``` applies the changes to 
+the database. Meanwhile, to implement the login/logout/user functionalities I also added ```pip install flask-login```.
 
 
 ## Author
@@ -93,4 +100,4 @@ Raffaele Talente, student enrolled at University of Naples "Parthenope"
 - [This codepen](https://codepen.io/sosuke/pen/Pjoqqp) - For changing color of SVG icons
 - [Three.js docs](https://threejs.org/docs/)
 - [This video](https://www.youtube.com/watch?v=Q7AOvWpIVHU) - For the image assets
-- [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+- [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) - A great course that helped me a lot with Flask

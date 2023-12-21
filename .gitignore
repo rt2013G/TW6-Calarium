@@ -1,8 +1,10 @@
 # Project files
 .idea/
 notes.md
-proposal/astronaut.png
-proposal/galaxy.jpg
+design/proposal/astronaut.png
+design/proposal/galaxy.jpg
+test.html
+app/app.db
 
 # Below I just copied the appropriate default .gitignore files from Github
 

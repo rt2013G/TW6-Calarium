@@ -1,0 +1,61 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(30);
+}
+
+.form .input-field {
+  width: rem(300);
+  height: rem(50);
+  @include __mix.breakpoint(desktop) {
+    width: rem(429);
+  }
+  border-radius: 90px;
+  border: solid var(--component-yellow) 1px;
+  background-color: var(--background-page);
+  color: var(--component-white);
+  outline: none;
+  font-weight: 700;
+  font-size: rem(22);
+  text-align: center;
+}
+
+.button-checkbox {
+  background-color: var(--component-white);
+  cursor: pointer;
+  width: rem(25);
+  height: rem(25);
+  border-radius: 50%;
+  appearance: none;
+  outline: none;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: rem(20);
+  margin-bottom: rem(40);
+}
+
+.button-checkbox:checked {
+  background: var(--component-yellow);
+}
+
+.form span {
+  color: var(--component-white);
+  font-size: rem(22);
+  font-weight: 800;
+  align-self: center;
+}
+
+.login-title {
+  font-size: rem(50);
+  color: var(--component-white);
+  font-weight: 800;
+  align-self: center;
+}

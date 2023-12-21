@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="page-text">
+      coming soon.
+    </div>
+    <a href="{{ url_for('main.home')}} ">
+      <button class="button">
+        Home Page
+      </button>
+    </a>
+</div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

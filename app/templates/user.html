@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="page-content-insert">
+        <div class="login-title">
+        {% if user == current_user %}
+            Ready for your next journey, {{ user.username }}?
+        {% else %}
+            Want to embark on a journey alongside {{ user.username }}?
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}

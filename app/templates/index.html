@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="game"></div>
+    <div class="button-container">
+      <a href="{{ url_for('auth.login') }}">
+      <button class="button button__mobile js-new-chat">
+        login
+      </button>
+      </a>
+
+      <a href="{{ url_for('auth.register') }}">
+      <button class="button js-download">
+        sign-up
+      </button>
+      </a>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block navigator %}
+<nav class="navigator hide-on-desktop">
+  <button class="planet hide-on-desktop">
+    <img class="planet__icon hide-on-desktop" src="{{ url_for('static',filename='assets/icons/saturn.svg') }}">
+    <span class="planet__text hide-on-desktop">explore.</span>
+  </button>
+</nav>
+{% endblock %}
+
+
+{% block header %}
+<header class="header">
+
+  <div class="header__left">
+    <button class="planet">
+      <img class="planet__icon" src="{{ url_for('static',filename='assets/icons/saturn.svg') }}">
+    </button>
+
+    <div class="header__title">Calarium</div>
+  </div>
+
+  <div class="header__right">
+
+    <input type="checkbox" id="header__sound" checked>
+    <label for="header__sound">
+      <img class="header__sound__icon" src="{{ url_for('static',filename='assets/icons/sound.svg') }}">
+    </label>
+
+    <a href="{{ url_for('auth.login') }}">
+    <div class="rect-button-container js-login-button">
+      <button class="button rectangle-button"></button>
+      <span class="login">login</span>
+    </div>
+    </a>
+
+    <button class="header__user js-user-icon">
+      <img class="header__user__icon" src="{{ url_for('static',filename='assets/icons/user.svg') }}">
+    </button>
+
+  </div>
+
+</header>
+{% endblock %}
+
+{% include '_music.html' %}

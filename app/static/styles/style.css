@@ -122,6 +122,25 @@ body {
   gap: 1.25rem;
 }
 
+.page-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.75rem;
+  color: var(--component-white);
+  font-weight: 800;
+}
+@media (min-width: 55.1875em) {
+  .page-text {
+    font-size: 6.25rem;
+  }
+}
+@media (min-width: 102.6875em) {
+  .page-text {
+    font-size: 8.75rem;
+  }
+}
+
 .hide-on-mobile {
   visibility: hidden;
   width: 0;
@@ -141,6 +160,67 @@ body {
     width: 0;
     height: 0;
   }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.form .input-field {
+  width: 18.75rem;
+  height: 3.125rem;
+  border-radius: 90px;
+  border: solid var(--component-yellow) 1px;
+  background-color: var(--background-page);
+  color: var(--component-white);
+  outline: none;
+  font-weight: 700;
+  font-size: 1.375rem;
+  text-align: center;
+}
+@media (min-width: 55.1875em) {
+  .form .input-field {
+    width: 26.8125rem;
+  }
+}
+
+.button-checkbox {
+  background-color: var(--component-white);
+  cursor: pointer;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  appearance: none;
+  outline: none;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.button-checkbox:checked {
+  background: var(--component-yellow);
+}
+
+.form span {
+  color: var(--component-white);
+  font-size: 1.375rem;
+  font-weight: 800;
+  align-self: center;
+}
+
+.login-title {
+  font-size: 3.125rem;
+  color: var(--component-white);
+  font-weight: 800;
+  align-self: center;
 }
 
 .main {
@@ -232,28 +312,6 @@ label[for=header__sound]:hover img {
   display: flex;
   justify-content: space-between;
   padding-left: 0.625rem;
-  /*&__planet {
-    background-color: transparent;
-    border: none;
-    margin-bottom: 5px;
-    margin-right: 4vw;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
-    display: none;
-    @include __mix.breakpoint(desktop) {
-      display: block;
-    }
-
-    &__icon {
-      width: rem(40);
-      height: rem(40);
-      margin-bottom: -5px;
-    }
-
-    &__text {
-      font-size: rem(12);
-      font-weight: 800;
-    }
-  }*/
 }
 .header__left {
   display: flex;

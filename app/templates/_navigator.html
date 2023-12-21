@@ -1,0 +1,42 @@
+<nav class="navigator mobile-fix">
+
+  <a href="{{ url_for('main.soon') }}">
+    <button class="navigator__circle">
+      <img class="navigator__circle__icon" src="{{ url_for('static',filename='assets/icons/rocket.svg') }}">
+    </button>
+  </a>
+  <a href="{{ url_for('main.soon') }}">
+    <button class="navigator__circle">
+      <img class="navigator__circle__icon" src="{{ url_for('static',filename='assets/icons/crew.svg') }}">
+    </button>
+  </a>
+
+  <a href="{{ url_for('main.soon') }}">
+    <button class="navigator__circle">
+      <img class="navigator__circle__icon" src="{{ url_for('static',filename='assets/icons/chat.svg') }}">
+    </button>
+  </a>
+
+  <a href="{{ url_for('main.soon') }}">
+    <button class="navigator__circle">
+      <img class="navigator__circle__icon" src="{{ url_for('static',filename='assets/icons/leaderboard.svg') }}">
+    </button>
+  </a>
+
+  <div class="separator hide-on-mobile"></div>
+
+  <a href="{{ url_for('main.soon') }}">
+    <button class="navigator__options hide-on-mobile">
+      <img class="navigator__options__icon" src="{{ url_for('static',filename='assets/icons/settings.svg') }}">
+      <span class="navigator__options__text">settings</span>
+    </button>
+  </a>
+
+  <a href="{{ url_for('auth.logout') }}">
+  <button class="navigator__options navigator__options__logout hide-on-mobile">
+    <img class="navigator__options__icon" src="{{ url_for('static',filename='assets/icons/logout.svg') }}">
+    <span class="navigator__options__text">logout</span>
+  </button>
+  </a>
+
+</nav>

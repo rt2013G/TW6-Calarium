@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="login-title">
+      the resource you were looking for wasn't found.
+    </div>
+    <a href="{{ url_for('main.index')}} ">
+      <button class="button">
+        back
+      </button>
+    </a>
+</div>
+{% endblock %}
+
+{% include '_music.html' %}

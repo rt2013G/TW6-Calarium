@@ -1,0 +1,65 @@
+*:focus {
+    outline: none;
+}
+
+.game
+{
+    width: 720px;
+    height: 405px;
+    background-color: black;
+    vertical-align: top;
+    border-style: solid;
+    border-color: black;
+    border-radius: 24px;
+    border-width: 2px;
+    margin-bottom: 30px;
+}
+
+.page
+{
+    text-align: center;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    object-position: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 60px;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+.text-box
+{
+    width: 200px;
+    margin-left: 15px;
+    vertical-align: middle;
+    font-size: 30px;
+    border-style: none;
+    padding-right: 0;
+}
+
+.send-button
+{
+    background-color: rgb(2, 158, 255);
+    width: 128px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 36px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    vertical-align: middle;
+}
+
+.send-button:hover
+{
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+}

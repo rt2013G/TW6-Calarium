@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="game"></div>
+    <div class="button-container">
+      <button class="button js-download">
+        download
+      </button>
+      <button class="button button__mobile js-new-chat">
+        new chat
+      </button>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}
