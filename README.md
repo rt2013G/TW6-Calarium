@@ -12,7 +12,8 @@ a web application in its entirety, including both the front end and the back end
       - [Gulp](#gulp)
       - [HTML](#html)
       - [Javascript](#javascript)
-      - [Three.js](#three.js)
+      - [Three.js](#threejs)
+      - [PWA](#pwa)
       - [Flask](#flask)
   - [Workflow](#workflow)
   - [What I learned](#what-i-learned)
@@ -75,7 +76,7 @@ I imported them as HTML script tags, but they can also be installed with npm as 
 ```npm install jquery```\
 ```npm install --save three```
 
-### Three.js
+### ThreeJS
 I used Three.js to add a three-dimensional background. I added a simple moon and some stars, some of which
 move when moving the mouse on the page. I didn't tinker with Three.js enough to uncover its full potential but
 overall I think it looks nice enough.

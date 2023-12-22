@@ -25,4 +25,16 @@ if(soundToggle) {
     audio.volume = playSound ? 0.2 : 0;
 })}
 
+let menu = true;
+const burgerMenu = document.querySelector('.header__menu');
+if(burgerMenu) {
+    burgerMenu.addEventListener('click', () => {
+    menu = !menu;
+    if(menu) {
+        $('.navigator').show()
+    } else {
+        $('.navigator').hide();
+    }
+})}
+
 mobileRender();
