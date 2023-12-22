@@ -6,7 +6,9 @@
 
 {% block main_content %}
 <div class="page-content">
-    <div class="game"></div>
+    <div class="page-text">
+      Calarium
+    </div>
     <div class="button-container">
       <a href="{{ url_for('auth.login') }}">
       <button class="button button__mobile js-new-chat">
@@ -41,8 +43,6 @@
     <button class="planet">
       <img class="planet__icon" src="{{ url_for('static',filename='assets/icons/saturn.svg') }}">
     </button>
-
-    <div class="header__title">Calarium</div>
   </div>
 
   <div class="header__right">

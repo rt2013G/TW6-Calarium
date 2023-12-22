@@ -51,6 +51,12 @@
   }
 }
 
+.game video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
@@ -69,5 +75,14 @@
   }
   @include __mix.breakpoint(highres) {
     font-size: rem(140);
+  }
+}
+
+.page-content-insert {
+  padding-left: rem(80);
+  max-width: rem(1200);
+  @include __mix.breakpoint(highres) {
+    padding-top: rem(100);
+    margin-bottom: rem(50);
   }
 }
