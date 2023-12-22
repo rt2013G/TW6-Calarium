@@ -17,7 +17,7 @@ def index():
 @bp.route('/home')
 @login_required
 def home():
-    return render_template('home.html', user=current_user)
+    return render_template('home.html')
 
 
 @bp.route('/user/<username>')
