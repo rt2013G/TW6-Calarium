@@ -6,7 +6,18 @@ from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-# TODO create connection between users and crews
+
+#
+# The crew class holds information for a crew, or small groups of user.
+# A crew has a derived attribute which is the collective 'power' of all its members
+#
+class Crew(db.Model):
+    crew_id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    crew_name: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
+    creation_date: so.Mapped[Optional[datetime]] = so.mapped_column(default=lambda: datetime.now(timezone.utc))
+
+    def __repr__(self):
+        return '<Crew {}>'.format(self.crew_name)
 
 
 #
@@ -20,6 +31,7 @@ class User(UserMixin, db.Model):
     about_me: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
     last_seen: so.Mapped[Optional[datetime]] = so.mapped_column(default=lambda: datetime.now(timezone.utc))
     power: so.Mapped[int] = so.mapped_column(sa.Integer, default=0)
+    crew_user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(Crew.crew_id), nullable=True)
 
     messages_sent: so.WriteOnlyMapped['Message'] = so.relationship(foreign_keys='Message.sender_id',
                                                                    back_populates='author')
@@ -50,20 +62,6 @@ class User(UserMixin, db.Model):
 @login.user_loader
 def load_user(login_user_id):
     return db.session.get(User, int(login_user_id))
-
-
-#
-# The crew class holds information for a crew, or small groups of user.
-# A crew has a derived attribute which is the collective 'power' of all its members
-#
-class Crew(db.Model):
-    crew_id: so.Mapped[int] = so.mapped_column(primary_key=True)
-    crew_name: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
-    creation_date: so.Mapped[Optional[datetime]] = so.mapped_column(default=lambda: datetime.now(timezone.utc))
-    leader_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id), index=True)
-
-    def __repr__(self):
-        return '<Crew {}>'.format(self.crew_name)
 
 
 class Message(db.Model):
