@@ -43,12 +43,6 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    def create_crew(self, name):
-        crew = Crew(leader_id=self.id)
-        crew.crewmates.add(self)
-        db.session.add(crew)
-        return crew
-
 
 # The loader function helps to connect flask-login with the database
 @login.user_loader

@@ -7,7 +7,9 @@
         {% if user == current_user %}
             Welcome to your profile, {{ user.username }}
         {% else %}
-            Want to embark on a journey alongside {{ user.username }}?
+            <a href="{{ url_for('main.play') }}">
+                <p>Want to embark on a journey alongside {{ user.username }}?</p>
+            </a>
         {% endif %}
         </div>
     </div>

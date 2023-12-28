@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="login-title">No crew?</div>
+    <form class="form" action="" method="post" novalidate>
+        {{ crew_form.hidden_tag() }}
+        {{ crew_form.crew_name(size=32, class_="input-field", placeholder_="Crew name") }}
+        {{ crew_form.submit(class_="button") }}
+    </form>
+
+    <div class="login-title">Looking for an already existing one?</div>
+    <a href="{{ url_for('main.enroll') }}">
+        <button class="button">Enroll</button>
+    </a>
+</div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

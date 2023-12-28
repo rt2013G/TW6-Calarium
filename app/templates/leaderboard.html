@@ -5,29 +5,9 @@
     <div class="leaderboard">
       <div class="leaderboard__users">
         <p class="leaderboard__title">Top users</p>
-        <div class="leaderboard__users__view">
-          <p>giuseppe</p>
-          <p class="score">9000</p>
-        </div>
-      </div>
-      <div class="leaderboard__crews">
-        <p class="leaderboard__title">Top crews</p>
-        <div class="leaderboard__crews__view">
-          <p>giuseppe</p>
-          <p class="score">9000</p>
-        </div>
-        <div class="leaderboard__crews__view">
-          <p>giuseppe</p>
-          <p class="score">9000</p>
-        </div>
-        <div class="leaderboard__crews__view">
-          <p>giuseppe</p>
-          <p class="score">9000</p>
-        </div>
-        <div class="leaderboard__crews__view">
-          <p>giuseppe</p>
-          <p class="score">9000</p>
-        </div>
+        {% for user in users %}
+          {% include '_lb-user.html' %}
+        {% endfor %}
       </div>
     </div>
   </div>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="page-content">
+    <div class="login-title">No crew?</div>
+    <form class="form" action="" method="post" novalidate>
+        {{ enroll_form.hidden_tag() }}
+        {{ enroll_form.crew_name(size=32, class_="input-field", placeholder_="Crew name") }}
+        {{ enroll_form.submit(class_="button") }}
+    </form>
+</div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

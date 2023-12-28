@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
+{% block background %}
+{% include '_three.html' %}
+{% endblock %}
+
 {% block main_content %}
   <div class="page-content">
-    <div class="game"></div>
+    <a href="{{ url_for('main.add_coins', username=current_user.username) }}">
     <button class="button">play</button>
-    <p id="game-coin-notification">You gained 800 starcoins!</p>
+    </a>
+    {% if coins is not none %}
+    <p id="game-coin-notification">You gained {{ coins }} starcoins!</p>
+    {% endif %}
   </div>
 {% endblock %}
 

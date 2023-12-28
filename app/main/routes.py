@@ -1,10 +1,11 @@
+import random
 from flask import render_template, redirect, url_for
 from flask_login import current_user, login_required
 import sqlalchemy as sa
 from app import db
 from app.main import bp
-from app.models import User, Post
-from app.main.forms import PostForm
+from app.models import User, Post, Crew
+from app.main.forms import PostForm, CrewForm, EnrollForm
 
 
 @bp.route('/')
@@ -40,10 +41,54 @@ def play():
     return render_template('play.html')
 
 
+@bp.route('/add_coins/<username>')
+def add_coins(username):
+    user = db.first_or_404(sa.select(User).where(User.username == username))
+    coins = random.randint(0, 500)
+    user.power += coins
+    db.session.commit()
+    return render_template('play.html', coins=coins)
+
+
 @bp.route('/crew')
 @login_required
 def crew():
-    return render_template('crew.html')
+    crew_id = current_user.crew_user_id
+    if crew_id is None:
+        return redirect(url_for('main.create_crew'))
+    crew = db.first_or_404(sa.select(Crew).where(Crew.crew_id == crew_id))
+    crewmates = db.session.scalars(sa.select(User).where(User.crew_user_id == crew_id).order_by(User.power))
+    wealth = 0
+    for crewmate in crewmates:
+        wealth += crewmate.power
+
+    return render_template('crew.html', crew=crew, wealth=wealth)
+
+
+@bp.route('/create_crew', methods=['GET', 'POST'])
+@login_required
+def create_crew():
+    crew_form = CrewForm()
+    if crew_form.validate_on_submit():
+        name = crew_form.crew_name.data
+        crew = Crew(crew_name=name)
+        db.session.add(crew)
+        db.session.commit()
+        return redirect(url_for('main.enroll', crew_name=name))
+
+    return render_template('crewless.html', crew_form=crew_form)
+
+
+@bp.route('/enroll/', methods=['GET', 'POST'])
+@login_required
+def enroll():
+    enroll_form = EnrollForm()
+    if enroll_form.validate_on_submit():
+        crew_id = db.session.scalar(sa.select(Crew).where(Crew.crew_name == enroll_form.crew_name.data)).crew_id
+        current_user.crew_user_id = crew_id
+        db.session.commit()
+        return redirect(url_for('main.crew'))
+    return render_template('enroll.html', enroll_form=enroll_form)
 
 
 @bp.route('/inbox')
@@ -69,4 +114,6 @@ def send_message():
 @bp.route('/leaderboard')
 @login_required
 def leaderboard():
-    return render_template('leaderboard.html')
+    query = sa.select(User).order_by(User.power.desc())
+    users = db.session.scalars(query)
+    return render_template('leaderboard.html', users=users)
