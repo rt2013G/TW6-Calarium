@@ -18,12 +18,22 @@ document.body.addEventListener('click', () => {
     audio.play();
 })
 
+
+// SOUND
 const soundToggle = document.getElementById('header__sound');
 if(soundToggle) {
     soundToggle.addEventListener('click', () => {
     playSound = document.getElementById('header__sound').checked;
     audio.volume = playSound ? 0.2 : 0;
 })}
+
+const soundToggleOptions = document.getElementById('settings__sound');
+if(soundToggleOptions) {
+    soundToggleOptions.addEventListener('click', () => {
+        playSound = document.getElementById('settings__sound').checked;
+        audio.volume = playSound ? 0.2 : 0;
+    })}
+
 
 let menu = true;
 const burgerMenu = document.querySelector('.header__menu');

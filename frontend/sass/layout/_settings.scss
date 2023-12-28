@@ -1,0 +1,43 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.settings {
+  justify-content: center;
+
+  &__animations__icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+    width: rem(120);
+    height: rem(80);
+    margin-left: rem(115);
+  }
+
+  &__sound {
+    &__icon {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+      width: rem(120);
+      height: rem(80);
+      margin-left: rem(17);
+    }
+  }
+
+  input[type='checkbox'][id='settings__sound'], input[type='checkbox'][id='settings__animations'] {
+    display: none;
+  }
+
+  label[for='settings__sound'], label[for='settings__animations'] {
+    position: relative;
+    cursor: pointer;
+  }
+
+  label[for='settings__sound']:hover img, label[for='settings__animations']:hover img {
+    filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+  }
+
+  :checked + label img {
+    filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+  }
+}
+
+.settings p {
+  font-weight: 400;
+}

@@ -37,17 +37,17 @@
 
 .game {
   background-color: var(--text-dark);
-  width: rem(320);
-  height: rem(180);
+  width: rem(450);
+  height: rem(253);
 
   @include __mix.breakpoint(desktop) {
-    width: rem(640);
-    height: rem(360);
+    width: rem(800);
+    height: rem(450);
   }
 
   @include __mix.breakpoint(highres) {
-    width: rem(960);
-    height: rem(540);
+    width: rem(1400);
+    height: rem(788);
   }
 }
 

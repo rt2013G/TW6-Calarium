@@ -1,3 +1,6 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -14,6 +17,17 @@ html {
 
 a {
   text-decoration: none;
+}
+
+p {
+  font-size: rem(40);
+  @include __mix.breakpoint(desktop) {
+    font-size: rem(50);
+  }
+  color: var(--component-white);
+  font-weight: 800;
+  align-self: center;
+  text-align: center;
 }
 
 body {

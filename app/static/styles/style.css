@@ -16,6 +16,19 @@ a {
   text-decoration: none;
 }
 
+p {
+  font-size: 2.5rem;
+  color: var(--component-white);
+  font-weight: 800;
+  align-self: center;
+  text-align: center;
+}
+@media (min-width: 55.1875em) {
+  p {
+    font-size: 3.125rem;
+  }
+}
+
 body {
   font-family: var(--main-font);
   background: var(--background-page);
@@ -100,19 +113,19 @@ body {
 
 .game {
   background-color: var(--text-dark);
-  width: 20rem;
-  height: 11.25rem;
+  width: 28.125rem;
+  height: 15.8125rem;
 }
 @media (min-width: 55.1875em) {
   .game {
-    width: 40rem;
-    height: 22.5rem;
+    width: 50rem;
+    height: 28.125rem;
   }
 }
 @media (min-width: 102.6875em) {
   .game {
-    width: 60rem;
-    height: 33.75rem;
+    width: 87.5rem;
+    height: 49.25rem;
   }
 }
 
@@ -201,6 +214,20 @@ body {
 @media (min-width: 55.1875em) {
   .form .input-field {
     width: 26.8125rem;
+  }
+}
+
+.form .input-field-message {
+  width: 18.75rem;
+  height: 18.75rem;
+  padding: 0.3125rem;
+  border-radius: 1.25rem;
+}
+@media (min-width: 55.1875em) {
+  .form .input-field-message {
+    width: 26.8125rem;
+    height: 26.8125rem;
+    padding: 1.25rem;
   }
 }
 
@@ -316,6 +343,35 @@ label[for=header__sound]:hover img {
   filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
 }
 
+.guild {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin: 6.25rem auto auto;
+  display: grid;
+  grid-template-rows: 6.25rem 6.25rem 6.25rem 1fr;
+  align-items: start;
+  justify-content: center;
+}
+.guild__title {
+  font-weight: 400;
+}
+.guild__members {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.guild__members__user {
+  display: flex;
+  flex-direction: column;
+  border: solid var(--component-yellow) 1px;
+  border-radius: 1.25rem;
+  background-color: var(--background-nav);
+}
+
 .header {
   background-color: var(--background-nav);
   z-index: 1;
@@ -397,6 +453,93 @@ label[for=header__sound]:hover img {
 }
 .header__user:hover {
   cursor: pointer;
+}
+
+.page-content-inbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin: 6.25rem auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inbox {
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
+  gap: 3.125rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 3.125rem;
+}
+.inbox__message {
+  padding: 0.3125rem;
+  border: solid var(--component-yellow) 1px;
+}
+@media (min-width: 55.1875em) {
+  .inbox__message {
+    padding: 3.125rem;
+  }
+}
+.inbox__message__content {
+  font-weight: 400;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+}
+@media (min-width: 55.1875em) {
+  .leaderboard {
+    gap: 6.25rem;
+  }
+}
+@media (min-width: 102.6875em) {
+  .leaderboard {
+    gap: 12.5rem;
+  }
+}
+.leaderboard__title {
+  margin-bottom: 3.125rem;
+}
+@media (min-width: 55.1875em) {
+  .leaderboard__title {
+    margin-bottom: 5rem;
+  }
+}
+.leaderboard__users {
+  display: flex;
+  flex-direction: column;
+}
+.leaderboard__users__view p {
+  font-size: 1.875rem;
+}
+@media (min-width: 55.1875em) {
+  .leaderboard__users__view p {
+    font-size: 2.5rem;
+  }
+}
+.leaderboard__crews {
+  display: flex;
+  flex-direction: column;
+}
+.leaderboard__crews__view p {
+  font-size: 1.875rem;
+}
+@media (min-width: 55.1875em) {
+  .leaderboard__crews__view p {
+    font-size: 2.5rem;
+  }
+}
+
+.leaderboard .score {
+  font-weight: 400;
 }
 
 .navigator {
@@ -492,4 +635,37 @@ label[for=header__sound]:hover img {
   .mobile-fix {
     margin-right: revert;
   }
+}
+
+.settings {
+  justify-content: center;
+}
+.settings__animations__icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+  width: 7.5rem;
+  height: 5rem;
+  margin-left: 7.1875rem;
+}
+.settings__sound__icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(105%);
+  width: 7.5rem;
+  height: 5rem;
+  margin-left: 1.0625rem;
+}
+.settings input[type=checkbox][id=settings__sound], .settings input[type=checkbox][id=settings__animations] {
+  display: none;
+}
+.settings label[for=settings__sound], .settings label[for=settings__animations] {
+  position: relative;
+  cursor: pointer;
+}
+.settings label[for=settings__sound]:hover img, .settings label[for=settings__animations]:hover img {
+  filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+}
+.settings :checked + label img {
+  filter: invert(77%) sepia(96%) saturate(468%) hue-rotate(358deg) brightness(101%) contrast(106%);
+}
+
+.settings p {
+  font-weight: 400;
 }

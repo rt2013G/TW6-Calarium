@@ -24,6 +24,18 @@
   text-align: center;
 }
 
+.form .input-field-message {
+  width: rem(300);
+  height: rem(300);
+  padding: rem(5);
+  @include __mix.breakpoint(desktop) {
+    width: rem(429);
+    height: rem(429);
+    padding: rem(20);
+  }
+  border-radius: rem(20);
+}
+
 .button-checkbox {
   background-color: var(--component-white);
   cursor: pointer;

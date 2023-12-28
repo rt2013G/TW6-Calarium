@@ -1,0 +1,49 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.leaderboard {
+  display: flex;
+  flex-direction: row;
+  gap: rem(30);
+  @include __mix.breakpoint(desktop) {
+    gap: rem(100);
+  }
+  @include __mix.breakpoint(highres) {
+    gap: rem(200);
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    @include __mix.breakpoint(desktop) {
+      margin-bottom: rem(80);
+    }
+  }
+
+  &__users {
+    display: flex;
+    flex-direction: column;
+
+    &__view p {
+      font-size: rem(30);
+      @include __mix.breakpoint(desktop) {
+        font-size: rem(40);
+      }
+    }
+  }
+
+  &__crews {
+    display: flex;
+    flex-direction: column;
+
+    &__view p {
+      font-size: rem(30);
+      @include __mix.breakpoint(desktop) {
+        font-size: rem(40);
+      }
+    }
+  }
+}
+
+.leaderboard .score {
+  font-weight: 400;
+}

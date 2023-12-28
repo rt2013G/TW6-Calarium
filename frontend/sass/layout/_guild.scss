@@ -1,0 +1,33 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as __mix;
+
+.guild {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin: rem(100) auto auto;
+  display: grid;
+  grid-template-rows: rem(100) rem(100) rem(100) 1fr;
+  align-items: start;
+  justify-content: center;
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__members {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    &__user {
+      display: flex;
+      flex-direction: column;
+      border: solid var(--component-yellow) 1px;
+      border-radius: rem(20);
+      background-color: var(--background-nav);
+    }
+  }
+}
