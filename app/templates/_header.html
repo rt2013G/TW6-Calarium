@@ -9,7 +9,9 @@
   </div>
 
   <button class="planet hide-on-mobile">
-    <img class="planet__icon" src="{{ url_for('static',filename='assets/icons/saturn.svg') }}">
+    <a href="{{ url_for('main.home') }}">
+      <img class="planet__icon" src="{{ url_for('static',filename='assets/icons/saturn.svg') }}">
+    </a>
     <span class="planet__text">explore.</span>
   </button>
 
@@ -17,7 +19,7 @@
 
     <input type="checkbox" id="header__sound" checked>
     <label for="header__sound">
-      <img class="header__sound__icon" src="{{ url_for('static',filename='assets/icons/sound.svg') }}">
+      <img class="header__sound__icon" src="{{ url_for('static', filename='assets/icons/sound.svg') }}">
     </label>
 
     <a href="{{ url_for('main.user', username=current_user.username) }}">

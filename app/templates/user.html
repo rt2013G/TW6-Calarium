@@ -11,15 +11,25 @@
         {% endif %}
         </div>
     </div>
+    {% if user == current_user %}
+    <a href="{{ url_for('main.play') }}">
+        <button class="button">Game</button>
+    </a>
+    <a href="{{ url_for('main.crew') }}">
+        <button class="button">Crew</button>
+    </a>
+    <a href="{{ url_for('main.inbox') }}">
+        <button class="button">Inbox</button>
+    </a>
+    <a href="{{ url_for('main.leaderboard') }}">
+        <button class="button">Leaderboard</button>
+    </a>
+    {% endif %}
 </div>
 {% endblock %}
-
-
-{% block navigator %}
-{% include '_navigator.html' %}
-{% endblock %}
-
 
 {% block header %}
 {% include '_header.html' %}
 {% endblock %}
+
+{% include '_music.html' %}

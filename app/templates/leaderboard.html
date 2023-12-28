@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+  <div class="page-content">
+    <div class="leaderboard">
+      <div class="leaderboard__users">
+        <p class="leaderboard__title">Top users</p>
+        <div class="leaderboard__users__view">
+          <p>giuseppe</p>
+          <p class="score">9000</p>
+        </div>
+      </div>
+      <div class="leaderboard__crews">
+        <p class="leaderboard__title">Top crews</p>
+        <div class="leaderboard__crews__view">
+          <p>giuseppe</p>
+          <p class="score">9000</p>
+        </div>
+        <div class="leaderboard__crews__view">
+          <p>giuseppe</p>
+          <p class="score">9000</p>
+        </div>
+        <div class="leaderboard__crews__view">
+          <p>giuseppe</p>
+          <p class="score">9000</p>
+        </div>
+        <div class="leaderboard__crews__view">
+          <p>giuseppe</p>
+          <p class="score">9000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

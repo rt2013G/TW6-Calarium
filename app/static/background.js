@@ -25,7 +25,7 @@ const scene = new THREE.Scene();
  */
 const camera = new THREE.PerspectiveCamera(90, size.width / size.height, 0.1, 1000);
 camera.position.setX(0);
-camera.position.setZ(20);
+camera.position.setZ(0);
 scene.add(camera);
 
 /*
@@ -56,18 +56,18 @@ function generateStaticStars(count, radius, color, distance) {
         scene.add(starMesh);
     });
 }
-generateStaticStars(300, 0.1, 0xfff100, 200);
-generateStaticStars(300, 0.16, 0xffffff, 300);
-generateStaticStars(1000, 0.2, 0xffffff, 750);
-generateStaticStars(2000, 0.15, 0xffffff, 100);
+generateStaticStars(150, 0.1, 0xfff100, 200);
+generateStaticStars(150, 0.16, 0xffffff, 300);
+generateStaticStars(500, 0.2, 0xffffff, 750);
+generateStaticStars(1000, 0.15, 0xffffff, 100);
 
 const movingStarGeometry = new THREE.BufferGeometry;
 const movingStarMaterial= new THREE.PointsMaterial({ size: 0.04 });
-const movingStarsCount = 5000;
+const movingStarsCount = 500;
 const movingStarsPosition = new Float32Array(movingStarsCount * 3);
 
 for(let i = 0; i < movingStarsCount * 3; i++) {
-    movingStarsPosition[i] = (Math.random() - 0.5) * 3000;
+    movingStarsPosition[i] = (Math.random() - 0.5) * 30;
 }
 movingStarGeometry.setAttribute('position', new THREE.BufferAttribute(movingStarsPosition, 3));
 const movingStarsMesh =  new THREE.Points(movingStarGeometry, movingStarMaterial);
@@ -85,7 +85,7 @@ const moon = new THREE.Mesh(
         normalMap: normalTexture,
     })
 );
-moon.position.z = -20;
+moon.position.z = -40;
 moon.position.x = 50;
 moon.position.y = 15;
 scene.add(moon);

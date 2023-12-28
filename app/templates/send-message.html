@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+  <div class="page-content">
+    <form class="form" action="" method="post" novalidate>
+      <input type="text" placeholder="recipient" class="input-field">
+      <textarea type="text" placeholder="message" class="input-field input-field-message"></textarea>
+      <input type="submit" class="button">
+    </form>
+  </div>
+{% endblock %}
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

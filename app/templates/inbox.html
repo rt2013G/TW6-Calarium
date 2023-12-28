@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+  <div class="page-content-inbox">
+      <div class="inbox">
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+        <div class="inbox__message">
+          <p class="inbox__message__author">Giuseppe says:</p>
+          <p class="inbox__message__content">bella</p>
+        </div>
+      </div>
+      <a href="{{ url_for('main.message') }}">
+      <button class="button">Send message</button>
+      </a>
+    </div>
+{% endblock %}
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

@@ -47,4 +47,11 @@ if(burgerMenu) {
     }
 })}
 
+import { settingsMenu } from "./settings.js";
+
+const settingsButton = document.querySelector('.js-options-button');
+if(settingsButton) {
+    settingsButton.addEventListener('click', settingsMenu);
+}
+
 mobileRender();

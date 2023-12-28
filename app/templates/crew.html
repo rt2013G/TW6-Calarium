@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="guild">
+      <p class="guild__name">THE EXPLORERS OF THE SPACE</p>
+      <p class="guild__title">Total crew wealth: 20000 starcoins</p>
+      <p class="guild__title">Crew members:</p>
+      <div class="guild__members">
+        <div class="guild__members__user">
+          <a href="/user/giuseppe">
+            <p>Giuseppe</p>
+            <p>200</p>
+          </a>
+        </div>
+        <div class="guild__members__user">
+          <p>Giuseppe</p>
+          <p>200</p>
+        </div>
+        <div class="guild__members__user">
+          <p>Giuseppe</p>
+          <p>200</p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+{% block navigator %}
+{% include '_navigator.html' %}
+{% endblock %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock %}
+
+{% include '_music.html' %}

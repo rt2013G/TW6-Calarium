@@ -31,3 +31,39 @@ def user(username):
 @login_required
 def soon():
     return render_template('errors/coming-soon.html')
+
+
+@bp.route('/play')
+@login_required
+def play():
+    return render_template('play.html')
+
+
+@bp.route('/crew')
+@login_required
+def crew():
+    return render_template('crew.html')
+
+
+@bp.route('/inbox')
+@login_required
+def inbox():
+    return render_template('inbox.html')
+
+
+@bp.route('/message')
+@login_required
+def message():
+    return render_template('send-message.html')
+
+
+@bp.route('/leaderboard')
+@login_required
+def leaderboard():
+    return render_template('leaderboard.html')
+
+
+@bp.route('/settings')
+@login_required
+def settings():
+    return render_template('settings.html')
