@@ -3,36 +3,11 @@
 {% block main_content %}
   <div class="page-content-inbox">
       <div class="inbox">
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
-        <div class="inbox__message">
-          <p class="inbox__message__author">Giuseppe says:</p>
-          <p class="inbox__message__content">bella</p>
-        </div>
+        {% for post in posts %}
+          {% include '_post.html' %}
+        {% endfor %}
       </div>
-      <a href="{{ url_for('main.message') }}">
+      <a href="{{ url_for('main.send_message') }}">
       <button class="button">Send message</button>
       </a>
     </div>

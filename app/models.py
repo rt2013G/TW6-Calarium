@@ -28,15 +28,11 @@ class User(UserMixin, db.Model):
     username: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
-    about_me: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
-    last_seen: so.Mapped[Optional[datetime]] = so.mapped_column(default=lambda: datetime.now(timezone.utc))
     power: so.Mapped[int] = so.mapped_column(sa.Integer, default=0)
     crew_user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(Crew.crew_id), nullable=True)
 
-    messages_sent: so.WriteOnlyMapped['Message'] = so.relationship(foreign_keys='Message.sender_id',
-                                                                   back_populates='author')
-    messages_received: so.WriteOnlyMapped['Message'] = so.relationship(foreign_keys='Message.recipient_id',
-                                                                       back_populates='recipient')
+    posts: so.WriteOnlyMapped['Post'] = so.relationship(
+        back_populates='author')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -46,10 +42,6 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
-
-    def get_messages(self):
-        query = self.messages_received.select().order_by(Message.timestamp.desc())
-        return db.session.scalars(query)
 
     def create_crew(self, name):
         crew = Crew(leader_id=self.id)
@@ -64,16 +56,13 @@ def load_user(login_user_id):
     return db.session.get(User, int(login_user_id))
 
 
-class Message(db.Model):
-    message_id: so.Mapped[int] = so.mapped_column(primary_key=True)
-    sender_id: so.Mapped[str] = so.mapped_column(sa.ForeignKey(User.id), index=True)
-    recipient_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id), index=True)
-    body: so.Mapped[str] = so.mapped_column(sa.String(512))
+class Post(db.Model):
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    body: so.Mapped[str] = so.mapped_column(sa.String(64))
+    user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id), index=True)
     timestamp: so.Mapped[datetime] = so.mapped_column(index=True, default=lambda: datetime.now(timezone.utc))
 
-    author: so.Mapped[User] = so.relationship(foreign_keys='Message.sender_id', back_populates='messages_sent')
-    recipient: so.Mapped[User] = so.relationship(foreign_keys='Message.recipient_id',
-                                                 back_populates='messages_received')
+    author: so.Mapped[User] = so.relationship(back_populates='posts')
 
     def __repr__(self):
-        return '<Message {}>'.format(self.body)
+        return '<Post {}>'.format(self.body)

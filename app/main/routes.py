@@ -3,7 +3,8 @@ from flask_login import current_user, login_required
 import sqlalchemy as sa
 from app import db
 from app.main import bp
-from app.models import User
+from app.models import User, Post
+from app.main.forms import PostForm
 
 
 @bp.route('/')
@@ -48,22 +49,24 @@ def crew():
 @bp.route('/inbox')
 @login_required
 def inbox():
-    return render_template('inbox.html')
+    query = sa.select(Post).order_by(Post.timestamp.desc())
+    posts = db.session.scalars(query)
+    return render_template('inbox.html', posts=posts)
 
 
-@bp.route('/message')
+@bp.route('/send_message', methods=['GET', 'POST'])
 @login_required
-def message():
-    return render_template('send-message.html')
+def send_message():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('main.inbox'))
+    return render_template('send-message.html', form=form)
 
 
 @bp.route('/leaderboard')
 @login_required
 def leaderboard():
     return render_template('leaderboard.html')
-
-
-@bp.route('/settings')
-@login_required
-def settings():
-    return render_template('settings.html')
