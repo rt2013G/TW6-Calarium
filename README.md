@@ -16,7 +16,8 @@ a web application in its entirety, including both the front end and the back end
       - [PWA](#pwa)
       - [Flask](#flask)
   - [Workflow](#workflow)
-  - [What I learned](#what-i-learned)
+- [Deployment](#deployment)
+- [What I learned](#what-i-learned)
 - [Author](#author)
 - [Additional resources and acknowledgements](#additional-resources-and-acknowledgements)
 
@@ -27,7 +28,8 @@ the user has to survey and analyze.\
 The purpose of this web application is to provide an additional layer of interactivity with the players: 
 it serves as an online client where people can not only download the game but also connect with one another through
 various different provided services, almost as if it were a game on its own.
-![](./game.jpg)
+
+<img src="./design/img/home.png" width="700"/>
 
 
 ## Workflow
@@ -98,6 +100,9 @@ DBMS when the application is closer to being completed.\
 To initialize a database with flask migrate, I used the flask sub-command ```flask db init```. 
 ```flask db migrate``` provides us with the migration script, then ```flask db upgrade``` applies the changes to 
 the database. Meanwhile, to implement the login/logout/user functionalities I also added ```pip install flask-login```.
+
+
+## Deployment
 
 
 ## What I learned
