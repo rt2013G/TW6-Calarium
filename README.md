@@ -103,6 +103,19 @@ the database. Meanwhile, to implement the login/logout/user functionalities I al
 
 
 ## Deployment
+I've deployed the application on [Heroku](https://www.heroku.com/).
+In order to work with heroku, you have to first install the **Heroku CLI** and login with ```heroku login```\
+After that, create a new heroku application with ```heroku apps:create YOURAPPNAME``` (change YOURAPPNAME with whatever
+name suits you)\
+Because heroku files are ephemeral, we also need to install a proper database add-on to store our data, I decided
+to use **Postgres** for this project:\
+```heroku addons:create heroku-postgresql:mini```\
+Then tell heroku the entry point of the application via a config variable:
+```heroku config:set FLASK_APP=calarium.py```\
+The only thing left to do is to set up a _Procfile_, which tells heroku the command to start the process, then finally
+do a ```git commit``` and a ```git push heroku main```\
+The app is now running on heroku, you can access the link via ```heroku info```
+
 
 
 ## What I learned
